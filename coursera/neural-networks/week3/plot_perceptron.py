@@ -38,6 +38,8 @@ def plot_perceptron(neg_examples, pos_examples, mistakes0, mistakes1, num_err_hi
     neg_correct_ind = np.array(list(set(range(len(neg_examples))) - set(mistakes0)),dtype=int)
     pos_correct_ind = np.array(list(set(range(len(pos_examples))) - set(mistakes1)),dtype=int)
 
+    pl.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=0.4, hspace=0.4)
+
     pl.subplot(2,2,1);
     if (len(neg_examples)):
         pl.plot(np.take(neg_examples[:,0], neg_correct_ind),np.take(neg_examples[:,1], neg_correct_ind),'og',markersize=20);
